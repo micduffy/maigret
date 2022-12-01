@@ -83,6 +83,7 @@ def save_pdf_report(filename: str, context: dict):
 
 
 def save_json_report(filename: str, username: str, results: dict, report_type: str):
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w", encoding="utf-8") as f:
         generate_json_report(username, results, f, report_type=report_type)
 
