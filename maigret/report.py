@@ -431,8 +431,8 @@ def generate_json_report(username: str, results: dict, file, report_type):
         if not site_result or not site_result.get("status"):
             continue
 
-        if site_result["status"].status != QueryStatus.CLAIMED:
-            continue
+        # if site_result["status"].status != QueryStatus.CLAIMED:
+        #     continue
 
         data = dict(site_result)
         data["status"] = data["status"].json()
